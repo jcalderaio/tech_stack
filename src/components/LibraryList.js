@@ -22,16 +22,11 @@ class LibraryList extends Component {
 		this.dataSource = ds.cloneWithRows(this.props.libraries);
 	}
 
-	// How to show a single item in the list
-	renderRow(library) {
-		return <ListItem library={library} />;
-	}
-
 	render() {
 		return (
 			<ListView
 				dataSource={this.dataSource}
-				renderRow={this.renderRow}
+				renderRow={(lib) => <ListItem library={lib} />}
 			/>
 		);
 	}
